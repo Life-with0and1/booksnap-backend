@@ -79,7 +79,7 @@ export const login = async (req, res) => {
 
         const token = genToken(user._id);
 
-        return return  res.status(200).json({
+        return res.status(200).json({
             token,
             user: {
                 id: user._id,
