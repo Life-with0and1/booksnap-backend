@@ -79,7 +79,15 @@ export const login = async (req, res) => {
 
         const token = genToken(user._id);
 
-        return res.status(201).json({ message: "Login successfull", token });
+        return return  res.status(200).json({
+            token,
+            user: {
+                id: user._id,
+                username: user.username,
+                email: user.email,
+                profileImage: user.profileImage
+            }
+        });
 
     } catch (error) {
         console.log("Error while login", error);
